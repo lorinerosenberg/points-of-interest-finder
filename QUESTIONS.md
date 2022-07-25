@@ -15,7 +15,7 @@ A:1
 Output: 2
 Output: 1
 
-Why: `co`nsole.log('1')` is called inside of a setTimeout so after the 100ms timeout it will be sent to the end of the callback queue and will be triggered after `console.log('2')`
+Why: `console.log('1')` is called inside of a setTimeout so after the 100ms timeout it will be sent to the end of the callback queue and will be triggered after `console.log('2')`
 
 ```
 
