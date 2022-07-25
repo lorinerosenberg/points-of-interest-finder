@@ -2,12 +2,30 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First install app depemdencies:
+
+```bash
+npm i
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
+```
+
+## Making changes to Prisma schema
+
+If any changes are made to the prisma client schema it can be regenerated using
+
+```bash
+npm run generate
+```
+
+A migration to the prisma db schema can be created using
+
+```bash
+prisma migrate dev --name
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

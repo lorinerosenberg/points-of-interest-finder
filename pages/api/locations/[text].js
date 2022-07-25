@@ -18,8 +18,10 @@ export default async function getLocations(req, res) {
   );
 
   if (sortedLocations.length === 0) {
-    res.status(404).send({ error: "A location with this text does not exist" });
+    return res
+      .status(404)
+      .json({ error: "A location with this text does not exist" });
+  } else {
+    res.json({ message: sortedLocations });
   }
-
-  res.json({ message: sortedLocations });
 }

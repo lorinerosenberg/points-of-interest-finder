@@ -6,16 +6,22 @@ const LocationFinder = () => {
   const [searchText, setSearchText] = useState("");
   const [error, setErrorMessage] = useState(null);
 
+  const resetState = () => {
+    setErrorMessage(null);
+    setLocations([]);
+  };
+
   const fetchLocations = useCallback(
     debounce((searchText) => {
-      setErrorMessage(null);
+      resetState();
       if (searchText.length >= 2) {
         fetch(`/api/locations/${searchText}`)
           .then((response) => response.json())
           .then((data) => {
             if (data.error) setErrorMessage(data.error);
             if (data.message) setLocations(data.message);
-          });
+          })
+          .catch((e) => setErrorMessage("Invalid response from API"));
       }
     }, 500),
     []
