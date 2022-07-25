@@ -1,5 +1,5 @@
 import Head from "next/head";
-import LocationFinder from "components/LocationFinder";
+import LocationFinder from "@components/LocationFinder";
 export default function Home() {
   return (
     <div>

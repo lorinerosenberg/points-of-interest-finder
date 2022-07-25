@@ -1,4 +1,4 @@
-import { prisma } from "prisma/client.js";
+import { prisma } from "@prisma/client.js";
 
 export default async function getLocations(req, res) {
   if (req.method != "GET") {
