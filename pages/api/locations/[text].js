@@ -18,9 +18,7 @@ export default async function getLocations(req, res) {
   );
 
   if (sortedLocations.length === 0) {
-    next(err);
-    res.status(404);
-    res.render("error", { error: err });
+    res.status(404).send({ error: "A location with this text does not exist" });
   }
 
   res.json({ message: sortedLocations });
